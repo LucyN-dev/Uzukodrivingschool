@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UZUKO Driving School</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0cfb9c3.js" crossorigin="anonymous"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: #f9fff7; color: #333; }
+    header {
+      text-align: center; padding: 80px 20px; background: linear-gradient(135deg, #d9f7b5, #b7ef8b);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    header h1 { font-size: 3em; margin-bottom: 10px; }
+    header p { font-size: 1.4em; }
+
+    .menu {
+      display: flex; flex-wrap: wrap; justify-content: center; margin: 50px auto; gap: 30px;
+    }
+    .menu button {
+      background: #fff; border: 3px solid #bdf7a5; border-radius: 20px; padding: 40px;
+      width: 150px; height: 150px; text-align: center; font-size: 1.2em; font-weight: 600;
+      cursor: pointer; transition: 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .menu button:hover {
+      transform: scale(1.05);
+      background-color: #dfffd0;
+    }
+    .menu i { font-size: 2.5em; margin-bottom: 15px; color: #d62828; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+
+    /* Modal styles */
+    .modal {
+      display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5); justify-content: center; align-items: center;
+    }
+    .modal-content {
+      background: #fff; padding: 30px; border-radius: 20px; width: 90%; max-width: 500px;
+      text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .close {
+      float: right; font-size: 1.8em; cursor: pointer; color: #d62828;
+    }
+    h2 { color: #d62828; margin-bottom: 20px; }
+    p { font-size: 1.1em; margin: 10px 0; }
+    footer {
+      background: #a9e88b; color: #333; text-align: center; padding: 20px;
+      font-weight: 600; margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>UZUKO Driving School</h1>
+    <p>Learn. Drive. Pass.</p>
+  </header>
+
+  <div class="menu">
+    <button onclick="openModal('courses')">
+      <i class="fas fa-car"></i> Courses
+    </button>
+    <button onclick="openModal('carhire')">
+      <i class="fas fa-key"></i> Car Hire
+    </button>
+    <button onclick="openModal('banking')">
+      <i class="fas fa-university"></i> Banking
+    </button>
+    <button onclick="openModal('contact')">
+      <i class="fas fa-phone"></i> Contact
+    </button>
+  </div>
+
+  <div id="courses" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('courses')">&times;</span>
+      <h2>Courses</h2>
+      <p>Code 8 Full Course: R3700</p>
+      <p>Code 8 Half Course: R2000</p>
+      <p>Code 10 Full Course: R4000</p>
+      <p>Code 10 Half Course: R2600</p>
+      <p>Learners Licence: R600</p>
+    </div>
+  </div>
+
+  <div id="carhire" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('carhire')">&times;</span>
+      <h2>Car Hire</h2>
+      <p>Car Hire: R600</p>
+    </div>
+  </div>
+
+  <div id="banking" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('banking')">&times;</span>
+      <h2>Banking Details</h2>
+      <p>Capitec: 1148991989</p>
+      <p>FNB: 62091826530</p>
+      <p>Account Holder: Luzuko Ngqwebo</p>
+    </div>
+  </div>
+
+  <div id="contact" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('contact')">&times;</span>
+      <h2>Contact</h2>
+      <p>Call or WhatsApp us on: 078 162 0350</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 UZUKO Driving School | All Rights Reserved
+  </footer>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
